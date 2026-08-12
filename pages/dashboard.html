@@ -1,67 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="brand">
+                <img class="logo" src="../images/logo.png" alt="StudentHub logo">
+                <div>
+                    <h1>StudentHub</h1>
+                    <p>Your dashboard for study progress</p>
+                </div>
+            </div>
+            <a class="btn" href="login.html">Login</a>
+        </div>
+    </header>
 
-<h1>StudentHub Dashboard</h1>
+    <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="assignments.html">Assignments</a>
+        <a href="courses.htm">Courses</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
 
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="dashboard.html">Dashboard</a> |
-    <a href="attendance.html">Attendance</a> |
-    <a href="assignments.html">Assignments</a> |
-    <a href="courses.html">Courses</a> |
-    <a href="timetable.html">Timetable</a> |
-    <a href="events.html">Events</a> |
-    <a href="profile.html">Profile</a>
-</nav>
+    <main class="container dashboard-page">
+        <section class="dashboard-welcome">
+            <div>
+                <span class="eyebrow">Student dashboard</span>
+                <h2>Good morning, John.</h2>
+                <p>Here is a quick look at your study progress for Semester 5.</p>
+            </div>
+            <div class="student-profile">
+                <strong>John Doe</strong>
+                <span>Computer Science</span>
+                <span>Semester 5</span>
+            </div>
+        </section>
 
-<hr>
+        <section class="dashboard-metrics" aria-label="Study progress summary">
+            <a class="metric-card" href="attendance.html">
+                <span class="metric-label">Attendance</span>
+                <strong>85%</strong>
+                <span class="metric-note">Good standing &rarr;</span>
+            </a>
+            <a class="metric-card" href="assignments.html">
+                <span class="metric-label">Pending work</span>
+                <strong>3</strong>
+                <span class="metric-note">Due this week &rarr;</span>
+            </a>
+            <a class="metric-card" href="courses.htm">
+                <span class="metric-label">Enrolled courses</span>
+                <strong>3</strong>
+                <span class="metric-note">View course list &rarr;</span>
+            </a>
+        </section>
 
-<h2>Welcome Student</h2>
+        <section class="dashboard-grid">
+            <div class="page-card dashboard-priority">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">Your next steps</span>
+                        <h2>Keep moving forward</h2>
+                    </div>
+                </div>
+                <a class="priority-item" href="assignments.html">
+                    <span class="priority-icon">01</span>
+                    <span><strong>Review pending assignments</strong><small>Three tasks need attention this week.</small></span>
+                    <span class="priority-arrow">&rarr;</span>
+                </a>
+                <a class="priority-item" href="timetable.html">
+                    <span class="priority-icon">02</span>
+                    <span><strong>Check tomorrow's timetable</strong><small>Plan your classes before the day begins.</small></span>
+                    <span class="priority-arrow">&rarr;</span>
+                </a>
+                <a class="priority-item" href="attendance.html">
+                    <span class="priority-icon">03</span>
+                    <span><strong>Track your attendance</strong><small>Keep your current 85% record on course.</small></span>
+                    <span class="priority-arrow">&rarr;</span>
+                </a>
+            </div>
 
-<p>Name: John Doe</p>
-<p>Department: Computer Science</p>
-<p>Semester: 5</p>
+            <div class="page-card dashboard-snapshot">
+                <span class="eyebrow">At a glance</span>
+                <h2>This week's snapshot</h2>
+                <table>
+                    <tr><th>Area</th><th>Current status</th></tr>
+                    <tr><td>Attendance</td><td><span class="table-status good">85% on track</span></td></tr>
+                    <tr><td>Assignments</td><td><span class="table-status pending">3 pending</span></td></tr>
+                    <tr><td>Campus events</td><td><span class="table-status info">2 upcoming</span></td></tr>
+                </table>
+                <a class="text-link" href="faq.html">Need help using StudentHub? &rarr;</a>
+            </div>
+        </section>
+    </main>
 
-<h3>Dashboard Overview</h3>
-
-<table border="1">
-
-<tr>
-    <th>Module</th>
-    <th>Status</th>
-</tr>
-
-<tr>
-    <td>Attendance</td>
-    <td>85%</td>
-</tr>
-
-<tr>
-    <td>Assignments</td>
-    <td>3 Pending</td>
-</tr>
-
-<tr>
-    <td>Upcoming Events</td>
-    <td>2 Events</td>
-</tr>
-
-</table>
-
-<br>
-
-<h3>Quick Links</h3>
-
-<ul>
-    <li><a href="attendance.html">Check Attendance</a></li>
-    <li><a href="assignments.html">View Assignments</a></li>
-    <li><a href="courses.html">View Courses</a></li>
-</ul>
-
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
+    </footer>
 </body>
 </html>

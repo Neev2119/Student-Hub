@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timetable - StudentHub</title>
+    <title>Feedback - StudentHub</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
                 <img class="logo" src="../images/logo.png" alt="StudentHub logo">
                 <div>
                     <h1>StudentHub</h1>
-                    <p>Plan your week</p>
+                    <p>Your voice matters</p>
                 </div>
             </div>
             <a class="btn" href="login.html">Login</a>
@@ -26,22 +26,33 @@
         <a href="attendance.html">Attendance</a>
         <a href="assignments.html">Assignments</a>
         <a href="courses.htm">Courses</a>
-        <a href="faq.html">FAQ</a>
-        <a href="feedback.html">Feedback</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <main class="container">
         <section class="page-card">
-            <h2>Weekly Timetable</h2>
-            <p>Review your class schedule for the week ahead.</p>
-            <table>
-                <tr><th>Day</th><th>9:00 AM</th><th>11:00 AM</th><th>2:00 PM</th></tr>
-                <tr><td>Monday</td><td>Web Development</td><td>Database</td><td>Java</td></tr>
-                <tr><td>Tuesday</td><td>Java</td><td>Web Development</td><td>Database</td></tr>
-                <tr><td>Wednesday</td><td>Database</td><td>Java</td><td>Web Development</td></tr>
-                <tr><td>Thursday</td><td>Web Development</td><td>Database</td><td>Java</td></tr>
-                <tr><td>Friday</td><td>Java</td><td>Web Development</td><td>Project Work</td></tr>
-            </table>
+            <h2>Share Your Feedback</h2>
+            <p>Your ideas help us improve StudentHub for every learner.</p>
+            <form>
+                <label>Full name</label>
+                <input type="text" placeholder="Enter your name">
+
+                <label>Email</label>
+                <input type="email" placeholder="you@college.edu">
+
+                <label>Experience</label>
+                <select>
+                    <option>Excellent</option>
+                    <option>Good</option>
+                    <option>Average</option>
+                    <option>Needs Improvement</option>
+                </select>
+
+                <label>Message</label>
+                <textarea placeholder="Tell us about your experience..."></textarea>
+
+                <button type="submit">Send Feedback</button>
+            </form>
         </section>
     </main>
 

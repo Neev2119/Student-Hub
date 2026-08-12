@@ -1,38 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="brand">
+                <img class="logo" src="../images/logo.png" alt="StudentHub logo">
+                <div>
+                    <h1>StudentHub</h1>
+                    <p>Your simple campus portal</p>
+                </div>
+            </div>
+            <a class="btn" href="login.html">Login</a>
+        </div>
+    </header>
 
-<h1>StudentHub Portal</h1>
+    <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="assignments.html">Assignments</a>
+        <a href="courses.htm">Courses</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="login.html">Login</a>
-    <a href="register.html">Register</a>
-</nav>
+    <main class="container home-page">
+        <section class="home-hero">
+            <div class="home-hero-copy">
+                <span class="eyebrow">Your student space</span>
+                <h2>Everything you need for a smoother semester.</h2>
+                <p>Keep track of your classes, stay ahead of deadlines, and find campus support without jumping between different pages.</p>
+            </div>
+            <div class="actions">
+                <a class="btn primary" href="dashboard.html">Open Dashboard</a>
+                <a class="btn secondary" href="timetable.html">View Timetable</a>
+            </div>
+        </section>
 
-<hr>
+        <section class="home-stats" aria-label="Student overview">
+            <div><strong>85%</strong><span>Current attendance</span><a href="attendance.html">View record &rarr;</a></div>
+            <div><strong>3</strong><span>Assignments this week</span><a href="assignments.html">Check deadlines &rarr;</a></div>
+            <div><strong>5</strong><span>Classes on your schedule</span><a href="timetable.html">Plan your week &rarr;</a></div>
+        </section>
 
-<h2>Welcome</h2>
+        <section class="home-section">
+            <div class="home-section-heading">
+                <div>
+                    <span class="eyebrow">Make it count</span>
+                    <h2>Start with what matters today</h2>
+                    <p>Shortcuts to the places students use most often.</p>
+                </div>
+            </div>
+            <div class="home-actions-grid">
+                <a class="action-card" href="assignments.html">
+                    <span class="action-number">01</span>
+                    <h3>Stay ahead of deadlines</h3>
+                    <p>See what is pending, what is submitted, and what needs your attention next.</p>
+                    <span class="action-link">Open assignments &rarr;</span>
+                </a>
+                <a class="action-card" href="courses.htm">
+                    <span class="action-number">02</span>
+                    <h3>Know your courses</h3>
+                    <p>Review your current subjects and quickly find the right academic information.</p>
+                    <span class="action-link">Explore courses &rarr;</span>
+                </a>
+                <a class="action-card" href="contact.html">
+                    <span class="action-number">03</span>
+                    <h3>Get help when you need it</h3>
+                    <p>Reach the StudentHub team for account questions, portal issues, or feedback.</p>
+                    <span class="action-link">Contact support &rarr;</span>
+                </a>
+            </div>
+        </section>
 
-<p>Welcome to the StudentHub Portal.</p>
+        <section class="home-section campus-section">
+            <div class="home-section-heading">
+                <div>
+                    <span class="eyebrow">Around campus</span>
+                    <h2>Find your place to learn</h2>
+                </div>
+                <a href="contact.html">Ask Student Services &rarr;</a>
+            </div>
+            <div class="campus-grid">
+                <article class="campus-card">
+                    <img src="../images/campus2.png" alt="Students studying on campus">
+                    <div><h3>Learn together</h3><p>Modern classrooms and active student life at the heart of campus.</p></div>
+                </article>
+                <article class="campus-card">
+                    <img src="../images/campus1.png" alt="Green campus surroundings">
+                    <div><h3>Make space for ideas</h3><p>Green surroundings, libraries, and welcoming spaces for focused study.</p></div>
+                </article>
+            </div>
+        </section>
+    </main>
 
-<h3>Features</h3>
-
-<ul>
-    <li>Attendance</li>
-    <li>Assignments</li>
-    <li>Courses</li>
-    <li>Timetable</li>
-    <li>Events</li>
-</ul>
-
-<button onclick="showMessage()">Click Me</button>
-
-<script src="script.js"></script>
-
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">S</div>
+                <div>
+                    <h2>StudentHub</h2>
+                    <p>Your simple campus portal for staying organised, informed, and connected.</p>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="courses.htm">Courses</a>
+                <a href="timetable.html">Timetable</a>
+            </div>
+            <div class="footer-column">
+                <h3>Student tools</h3>
+                <a href="attendance.html">Attendance</a>
+                <a href="assignments.html">Assignments</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-column">
+                <h3>Need help?</h3>
+                <p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p>
+                <a href="contact.html">Contact support &rarr;</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 StudentHub. All rights reserved.</span>
+            <span>Built for better student experiences.</span>
+        </div>
+    </footer>
 </body>
 </html>

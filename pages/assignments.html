@@ -1,60 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignments - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="brand">
+                <img class="logo" src="../images/logo.png" alt="StudentHub logo">
+                <div>
+                    <h1>StudentHub</h1>
+                    <p>Manage your assignments</p>
+                </div>
+            </div>
+            <a class="btn" href="login.html">Login</a>
+        </div>
+    </header>
 
-<h1>StudentHub</h1>
+    <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="assignments.html">Assignments</a>
+        <a href="courses.htm">Courses</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
 
-<nav>
-    <a href="dashboard.html">Dashboard</a> |
-    <a href="attendance.html">Attendance</a> |
-    <a href="assignments.html">Assignments</a> |
-    <a href="courses.html">Courses</a> |
-    <a href="profile.html">Profile</a>
-</nav>
+    <main class="container assignments-page">
+        <section class="assignments-welcome">
+            <div>
+                <span class="eyebrow">Semester 5 workload</span>
+                <h2>Stay ahead of your next deadline.</h2>
+                <p>Keep every task visible, make time for quality work, and know exactly what still needs to be submitted.</p>
+            </div>
+            <div class="assignment-count">
+                <strong>3</strong>
+                <span>Assignments this week</span>
+            </div>
+        </section>
 
-<hr>
+        <section class="assignment-summary" aria-label="Assignment summary">
+            <div><strong>2</strong><span>Pending submissions</span></div>
+            <div><strong>1</strong><span>Submitted this week</span></div>
+            <div><strong>15 Aug</strong><span>Next active deadline</span></div>
+        </section>
 
-<h2>Assignments</h2>
+        <section class="assignments-section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Your workload</span>
+                    <h2>What needs your attention</h2>
+                </div>
+                <a href="timetable.html">Plan study time &rarr;</a>
+            </div>
+            <div class="assignment-cards">
+                <article class="assignment-card assignment-card-priority">
+                    <div class="assignment-card-top"><span class="assignment-code">WD-205</span><span class="table-status pending">Pending</span></div>
+                    <h3>Portfolio Website</h3>
+                    <p>Build a responsive personal portfolio using the web development concepts from this term.</p>
+                    <div class="assignment-meta"><span>Due 10 August</span><strong>Needs attention</strong></div>
+                    <a href="courses.htm">View course details &rarr;</a>
+                </article>
+                <article class="assignment-card">
+                    <div class="assignment-card-top"><span class="assignment-code">DB-204</span><span class="table-status submitted">Submitted</span></div>
+                    <h3>SQL Project</h3>
+                    <p>Design a small relational database and demonstrate queries, relationships, and data validation.</p>
+                    <div class="assignment-meta"><span>Due 15 August</span><strong>Submitted</strong></div>
+                    <a href="courses.htm">View course details &rarr;</a>
+                </article>
+                <article class="assignment-card">
+                    <div class="assignment-card-top"><span class="assignment-code">JA-203</span><span class="table-status pending">Pending</span></div>
+                    <h3>Mini Project</h3>
+                    <p>Apply object-oriented programming fundamentals to create a small Java application.</p>
+                    <div class="assignment-meta"><span>Due 20 August</span><strong>Plan your work</strong></div>
+                    <a href="courses.htm">View course details &rarr;</a>
+                </article>
+            </div>
+        </section>
 
-<table border="1">
+        <section class="page-card assignment-table-card">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Quick reference</span>
+                    <h2>All assignments</h2>
+                </div>
+                <a href="contact.html">Ask for support &rarr;</a>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Subject</th><th>Assignment</th><th>Due date</th><th>Status</th></tr></thead>
+                    <tbody>
+                        <tr><td>Web Development</td><td>Portfolio Website</td><td>10 August</td><td><span class="table-status pending">Pending</span></td></tr>
+                        <tr><td>Database Management</td><td>SQL Project</td><td>15 August</td><td><span class="table-status submitted">Submitted</span></td></tr>
+                        <tr><td>Java Programming</td><td>Mini Project</td><td>20 August</td><td><span class="table-status pending">Pending</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-<tr>
-    <th>Subject</th>
-    <th>Assignment</th>
-    <th>Due Date</th>
-    <th>Status</th>
-</tr>
+        <section class="assignment-tip">
+            <strong>Make a simple plan.</strong>
+            <span>Start with the earliest deadline, then reserve a small review session before each submission.</span>
+            <a href="timetable.html">Open timetable &rarr;</a>
+        </section>
+    </main>
 
-<tr>
-    <td>Web Development</td>
-    <td>Portfolio Website</td>
-    <td>10 August</td>
-    <td>Pending</td>
-</tr>
-
-<tr>
-    <td>Database</td>
-    <td>SQL Project</td>
-    <td>15 August</td>
-    <td>Submitted</td>
-</tr>
-
-<tr>
-    <td>Java</td>
-    <td>Mini Project</td>
-    <td>20 August</td>
-    <td>Pending</td>
-</tr>
-
-</table>
-
-<br>
-
-<a href="dashboard.html">Back to Dashboard</a>
-
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
+    </footer>
 </body>
 </html>

@@ -1,60 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="brand">
+                <img class="logo" src="../images/logo.png" alt="StudentHub logo">
+                <div>
+                    <h1>StudentHub</h1>
+                    <p>Track your attendance</p>
+                </div>
+            </div>
+            <a class="btn" href="login.html">Login</a>
+        </div>
+    </header>
 
-<h1>StudentHub</h1>
+    <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="assignments.html">Assignments</a>
+        <a href="courses.htm">Courses</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
 
-<nav>
-    <a href="dashboard.html">Dashboard</a> |
-    <a href="attendance.html">Attendance</a> |
-    <a href="assignments.html">Assignments</a> |
-    <a href="courses.html">Courses</a> |
-    <a href="profile.html">Profile</a>
-</nav>
+    <main class="container attendance-page">
+        <section class="attendance-welcome">
+            <div>
+                <span class="eyebrow">Semester 5 overview</span>
+                <h2>Your attendance is on track.</h2>
+                <p>You have attended 115 of 135 classes this term. Keep checking in regularly to protect your progress.</p>
+            </div>
+            <div class="attendance-score">
+                <strong>85%</strong>
+                <span>Overall attendance</span>
+            </div>
+        </section>
 
-<hr>
+        <section class="attendance-summary" aria-label="Attendance summary">
+            <div><strong>115</strong><span>Classes attended</span></div>
+            <div><strong>20</strong><span>Classes missed</span></div>
+            <div><strong>3</strong><span>Subjects tracked</span></div>
+        </section>
 
-<h2>Attendance</h2>
+        <section class="attendance-subjects">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Subject breakdown</span>
+                    <h2>See where you stand</h2>
+                </div>
+                <p>Review each subject and focus your effort where it matters.</p>
+            </div>
+            <div class="attendance-cards">
+                <article class="attendance-card">
+                    <div class="attendance-card-top"><span>Web Development</span><strong>87%</strong></div>
+                    <div class="progress-track"><span style="width: 87%"></span></div>
+                    <p>35 present out of 40 classes</p>
+                    <a href="courses.htm">View course &rarr;</a>
+                </article>
+                <article class="attendance-card">
+                    <div class="attendance-card-top"><span>Database Management</span><strong>84%</strong></div>
+                    <div class="progress-track"><span style="width: 84%"></span></div>
+                    <p>38 present out of 45 classes</p>
+                    <a href="courses.htm">View course &rarr;</a>
+                </article>
+                <article class="attendance-card">
+                    <div class="attendance-card-top"><span>Java Programming</span><strong>85%</strong></div>
+                    <div class="progress-track"><span style="width: 85%"></span></div>
+                    <p>42 present out of 50 classes</p>
+                    <a href="courses.htm">View course &rarr;</a>
+                </article>
+            </div>
+        </section>
 
-<table border="1">
+        <section class="page-card attendance-table-card">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Detailed record</span>
+                    <h2>Class attendance</h2>
+                </div>
+                <a href="contact.html">Report a correction &rarr;</a>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Subject</th><th>Total classes</th><th>Present</th><th>Missed</th><th>Percentage</th></tr></thead>
+                    <tbody>
+                        <tr><td>Web Development</td><td>40</td><td>35</td><td>5</td><td><span class="table-status good">87%</span></td></tr>
+                        <tr><td>Database Management</td><td>45</td><td>38</td><td>7</td><td><span class="table-status good">84%</span></td></tr>
+                        <tr><td>Java Programming</td><td>50</td><td>42</td><td>8</td><td><span class="table-status good">85%</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-<tr>
-    <th>Subject</th>
-    <th>Total Classes</th>
-    <th>Present</th>
-    <th>Percentage</th>
-</tr>
+        <section class="attendance-tip">
+            <strong>Small habit, big difference.</strong>
+            <span>Check your timetable each morning and arrive a few minutes early for your first class.</span>
+            <a href="timetable.html">Open timetable &rarr;</a>
+        </section>
+    </main>
 
-<tr>
-    <td>Web Development</td>
-    <td>40</td>
-    <td>35</td>
-    <td>87%</td>
-</tr>
-
-<tr>
-    <td>Database</td>
-    <td>45</td>
-    <td>38</td>
-    <td>84%</td>
-</tr>
-
-<tr>
-    <td>Java</td>
-    <td>50</td>
-    <td>42</td>
-    <td>85%</td>
-</tr>
-
-</table>
-
-<br>
-
-<a href="dashboard.html">Back to Dashboard</a>
-
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
+    </footer>
 </body>
 </html>

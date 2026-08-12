@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timetable - StudentHub</title>
+    <title>Contact - StudentHub</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
                 <img class="logo" src="../images/logo.png" alt="StudentHub logo">
                 <div>
                     <h1>StudentHub</h1>
-                    <p>Plan your week</p>
+                    <p>Contact the support team</p>
                 </div>
             </div>
             <a class="btn" href="login.html">Login</a>
@@ -26,22 +26,36 @@
         <a href="attendance.html">Attendance</a>
         <a href="assignments.html">Assignments</a>
         <a href="courses.htm">Courses</a>
-        <a href="faq.html">FAQ</a>
         <a href="feedback.html">Feedback</a>
     </nav>
 
     <main class="container">
         <section class="page-card">
-            <h2>Weekly Timetable</h2>
-            <p>Review your class schedule for the week ahead.</p>
-            <table>
-                <tr><th>Day</th><th>9:00 AM</th><th>11:00 AM</th><th>2:00 PM</th></tr>
-                <tr><td>Monday</td><td>Web Development</td><td>Database</td><td>Java</td></tr>
-                <tr><td>Tuesday</td><td>Java</td><td>Web Development</td><td>Database</td></tr>
-                <tr><td>Wednesday</td><td>Database</td><td>Java</td><td>Web Development</td></tr>
-                <tr><td>Thursday</td><td>Web Development</td><td>Database</td><td>Java</td></tr>
-                <tr><td>Friday</td><td>Java</td><td>Web Development</td><td>Project Work</td></tr>
-            </table>
+            <h2>Contact the StudentHub Team</h2>
+            <p>Reach out for account help, portal issues, or general support.</p>
+            <div class="card-grid">
+                <article class="card">
+                    <span class="status-pill">Support available</span>
+                    <h3>Contact Details</h3>
+                    <div class="contact-list">
+                        <div><strong>Email</strong><p>support@studenthub.edu</p></div>
+                        <div><strong>Phone</strong><p>+1 (555) 012-3456</p></div>
+                        <div><strong>Office</strong><p>Student Services Building, Room 204</p></div>
+                    </div>
+                </article>
+                <article class="card">
+                    <h3>Send a Message</h3>
+                    <form>
+                        <label>Full name</label>
+                        <input type="text" placeholder="Enter your name">
+                        <label>Email</label>
+                        <input type="email" placeholder="you@college.edu">
+                        <label>Message</label>
+                        <textarea placeholder="Describe your issue or question..."></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </article>
+            </div>
         </section>
     </main>
 
