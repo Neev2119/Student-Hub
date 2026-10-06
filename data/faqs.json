@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "question": "How do I log in to StudentHub?",
+    "category": "Account",
+    "answer": "Open the Login page and enter the student email address and password used during registration."
+  },
+  {
+    "id": 2,
+    "question": "What should I do if I forget my password?",
+    "category": "Account",
+    "answer": "Contact Student Services so the team can verify your account and help you regain access."
+  },
+  {
+    "id": 3,
+    "question": "Can I view my attendance online?",
+    "category": "Academics",
+    "answer": "Yes. The Attendance page shows your current subject-wise record."
+  },
+  {
+    "id": 4,
+    "question": "Where can I find my timetable and courses?",
+    "category": "Academics",
+    "answer": "Use Courses to review your subjects and Timetable to plan your weekly classes."
+  },
+  {
+    "id": 5,
+    "question": "Where can I see my assignments?",
+    "category": "Assignments",
+    "answer": "Visit Assignments from the top navigation to see tasks, due dates, and submission status."
+  },
+  {
+    "id": 6,
+    "question": "How do I contact Student Services?",
+    "category": "Support",
+    "answer": "Use the Contact page to find support hours, email, and phone details."
+  },
+  {
+    "id": 7,
+    "question": "How can I update my profile information?",
+    "category": "Account",
+    "answer": "Contact Student Services with the details you need to change and your student identification."
+  },
+  {
+    "id": 8,
+    "question": "How is attendance calculated?",
+    "category": "Academics",
+    "answer": "Attendance is calculated from the classes recorded by each course instructor."
+  },
+  {
+    "id": 9,
+    "question": "Where can I check assignment deadlines?",
+    "category": "Assignments",
+    "answer": "Open the Assignments page to review task names, due dates, and submission status."
+  },
+  {
+    "id": 10,
+    "question": "Can I view campus events online?",
+    "category": "Campus",
+    "answer": "Yes. Open the Resources page and choose Events to search and filter upcoming activities."
+  },
+  {
+    "id": 11,
+    "question": "How do I find my course information?",
+    "category": "Academics",
+    "answer": "Use the Courses page to review enrolled subjects and course details."
+  },
+  {
+    "id": 12,
+    "question": "What should I do if portal data looks incorrect?",
+    "category": "Support",
+    "answer": "Note the page and information involved, then contact Student Services for verification."
+  },
+  {
+    "id": 13,
+    "question": "Where can I find the weekly timetable?",
+    "category": "Academics",
+    "answer": "Open Timetable from the navigation to view your weekly class schedule."
+  },
+  {
+    "id": 14,
+    "question": "How do I submit feedback?",
+    "category": "Support",
+    "answer": "Open the Feedback page, complete the form, and submit your comments to the StudentHub team."
+  },
+  {
+    "id": 15,
+    "question": "Who can access student profiles?",
+    "category": "Account",
+    "answer": "Student profiles are intended for the StudentHub student community and should be used respectfully."
+  }
+]

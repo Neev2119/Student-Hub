@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resources - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="brand">
+                <img class="logo" src="../images/logo.png" alt="StudentHub logo">
+                <div>
+                    <h1>StudentHub</h1>
+                    <p>Useful information for campus life</p>
+                </div>
+            </div>
+            <a class="btn" href="login.html">Login</a>
+        </div>
+    </header>
+
+    <nav class="top-nav"></nav>
+
+    <main class="container resources-page">
+        <section class="resources-hero">
+            <div>
+                <span class="eyebrow">Student resources</span>
+                <h2>Find what you need, quickly.</h2>
+                <p>Browse campus events, student records, and frequently asked questions from one live data source.</p>
+            </div>
+            <span id="resourceCount" class="resource-count" aria-live="polite">Loading resources...</span>
+        </section>
+
+        <section class="resource-browser page-card" aria-labelledby="resource-browser-title">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Browse the hub</span>
+                    <h2 id="resource-browser-title">Campus information</h2>
+                </div>
+                <p id="resourceStatus" role="status" aria-live="polite">Loading...</p>
+            </div>
+
+            <div class="resource-tabs" role="tablist" aria-label="Resource types">
+                <button class="resource-tab active" type="button" role="tab" aria-selected="true" data-resource="events">Events</button>
+                <button class="resource-tab" type="button" role="tab" aria-selected="false" data-resource="students">Students</button>
+                <button class="resource-tab" type="button" role="tab" aria-selected="false" data-resource="faqs">FAQs</button>
+            </div>
+
+            <div class="resource-controls">
+                <label class="resource-search" for="resourceSearch">
+                    Search
+                    <input id="resourceSearch" type="search" placeholder="Search this resource list" autocomplete="off">
+                </label>
+                <label for="resourceFilter">
+                    Filter by category
+                    <select id="resourceFilter">
+                        <option value="all">All categories</option>
+                    </select>
+                </label>
+                <label for="resourceSort">
+                    Sort by
+                    <select id="resourceSort">
+                        <option value="default">Recommended</option>
+                        <option value="title-asc">Title A-Z</option>
+                        <option value="title-desc">Title Z-A</option>
+                        <option value="date-asc">Date earliest</option>
+                        <option value="date-desc">Date latest</option>
+                    </select>
+                </label>
+            </div>
+
+            <div id="resourceList" class="resource-list" aria-live="polite" aria-busy="true"></div>
+            <div id="resourceEmpty" class="resource-empty" hidden>No resources match your search.</div>
+            <nav id="resourcePagination" class="resource-pagination" aria-label="Resource pages"></nav>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
+    </footer>
+    <script src="../javascript/site.js" defer></script>
+    <script src="../javascript/resources.js" defer></script>
+</body>
+</html>

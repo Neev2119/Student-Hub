@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - StudentHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="auth-body">
+    <main class="auth-card">
+        <h1 style="text-align: center;">StudentHub</h1>
+        <p>Create your student account</p>
+        <form id="registerForm" action="http://localhost/WDF/Student-Hub/php/process-form.php" method="post" novalidate>
+            <input type="hidden" name="formType" value="registration">
+
+            <label for="studentId">Student ID</label>
+            <input id="studentId" name="studentId" type="text" placeholder="Enter your student ID" required pattern="[A-Za-z0-9-]{4,20}" title="Enter a valid student ID with letters, numbers, or hyphens">
+
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Enter your full name" required pattern="[A-Za-z]+(?:(?: |'|-)[A-Za-z]+)+" title="Enter at least two names using letters, spaces, apostrophes, or hyphens">
+
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}" title="Enter a valid email address">
+
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" inputmode="numeric" placeholder="Enter your 10-digit mobile number" required pattern="[0-9]{10}" title="Enter a 10-digit mobile number">
+
+            <fieldset>
+                <legend>Gender</legend>
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+                <label><input type="radio" name="gender" value="male"> Male</label>
+            </fieldset>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Create a password" required pattern="(?=.*[A-Za-z])(?=.*[0-9])(?=.*[@$!%*?&]).{8,}" title="Use at least 8 characters, including a letter, a number, and a special character">
+
+            <label for="confirmPassword">Confirm password</label>
+            <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-enter password" required>
+
+            <label class="terms-label">
+                <input id="terms" name="terms" type="checkbox" required>
+                I accept the terms and conditions.
+            </label>
+
+            <button type="submit">Create Account</button>
+            <p id="registerMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+        <div class="auth-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+        </div>
+    </main>
+    <script src="../javascript/register.js" defer></script>
+</body>
+</html>

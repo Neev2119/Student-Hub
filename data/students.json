@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Aarav Mehta",
+    "course": "B.Tech Computer Science",
+    "year": "Third year",
+    "department": "Engineering",
+    "email": "aarav.mehta@studenthub.edu",
+    "interests": ["Web development", "Robotics"]
+  },
+  {
+    "id": 2,
+    "name": "Maya Singh",
+    "course": "BBA Business Analytics",
+    "year": "Second year",
+    "department": "Management",
+    "email": "maya.singh@studenthub.edu",
+    "interests": ["Analytics", "Entrepreneurship"]
+  },
+  {
+    "id": 3,
+    "name": "Rohan Das",
+    "course": "BCA Information Technology",
+    "year": "First year",
+    "department": "Computing",
+    "email": "rohan.das@studenthub.edu",
+    "interests": ["Cybersecurity", "Gaming"]
+  },
+  {
+    "id": 4,
+    "name": "Isha Kapoor",
+    "course": "MCA Software Systems",
+    "year": "First year",
+    "department": "Computing",
+    "email": "isha.kapoor@studenthub.edu",
+    "interests": ["Cloud computing", "Design"]
+  },
+  {
+    "id": 5,
+    "name": "Kabir Shah",
+    "course": "B.Tech Electronics",
+    "year": "Fourth year",
+    "department": "Engineering",
+    "email": "kabir.shah@studenthub.edu",
+    "interests": ["Embedded systems", "Music"]
+  },
+  {
+    "id": 6,
+    "name": "Nisha Verma",
+    "course": "BBA Marketing",
+    "year": "Third year",
+    "department": "Management",
+    "email": "nisha.verma@studenthub.edu",
+    "interests": ["Brand strategy", "Photography"]
+  },
+  {
+    "id": 7,
+    "name": "Dev Malhotra",
+    "course": "B.Tech Civil Engineering",
+    "year": "Second year",
+    "department": "Engineering",
+    "email": "dev.malhotra@studenthub.edu",
+    "interests": ["Sustainable design", "Cycling"]
+  },
+  {
+    "id": 8,
+    "name": "Ananya Rao",
+    "course": "BCA Data Science",
+    "year": "Second year",
+    "department": "Computing",
+    "email": "ananya.rao@studenthub.edu",
+    "interests": ["Machine learning", "Reading"]
+  },
+  {
+    "id": 9,
+    "name": "Vikram Joshi",
+    "course": "BBA Finance",
+    "year": "Fourth year",
+    "department": "Management",
+    "email": "vikram.joshi@studenthub.edu",
+    "interests": ["Investment", "Debate"]
+  },
+  {
+    "id": 10,
+    "name": "Sara Khan",
+    "course": "MCA Application Development",
+    "year": "Second year",
+    "department": "Computing",
+    "email": "sara.khan@studenthub.edu",
+    "interests": ["Mobile apps", "Painting"]
+  },
+  {
+    "id": 11,
+    "name": "Neel Patel",
+    "course": "B.Tech Mechanical Engineering",
+    "year": "Third year",
+    "department": "Engineering",
+    "email": "neel.patel@studenthub.edu",
+    "interests": ["Automation", "Football"]
+  },
+  {
+    "id": 12,
+    "name": "Priya Menon",
+    "course": "BBA Human Resources",
+    "year": "First year",
+    "department": "Management",
+    "email": "priya.menon@studenthub.edu",
+    "interests": ["People management", "Dance"]
+  },
+  {
+    "id": 13,
+    "name": "Aditya Roy",
+    "course": "BCA Cloud Computing",
+    "year": "Third year",
+    "department": "Computing",
+    "email": "aditya.roy@studenthub.edu",
+    "interests": ["DevOps", "Photography"]
+  },
+  {
+    "id": 14,
+    "name": "Meera Iyer",
+    "course": "B.Tech Information Technology",
+    "year": "Fourth year",
+    "department": "Engineering",
+    "email": "meera.iyer@studenthub.edu",
+    "interests": ["Artificial intelligence", "Music"]
+  },
+  {
+    "id": 15,
+    "name": "Arjun Kulkarni",
+    "course": "BBA Operations",
+    "year": "Second year",
+    "department": "Management",
+    "email": "arjun.kulkarni@studenthub.edu",
+    "interests": ["Supply chains", "Chess"]
+  }
+]

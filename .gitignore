@@ -1,0 +1,4 @@
+# Keep locally submitted personal data out of source control.
+/data/form-submissions.json
+/csv/registrations.csv
+/text/registrations.txt

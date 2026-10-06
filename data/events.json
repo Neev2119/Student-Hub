@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Innovation Showcase",
+    "category": "Academic",
+    "date": "2026-09-24",
+    "location": "Innovation Hall",
+    "description": "See student projects, prototypes, and research ideas from across campus."
+  },
+  {
+    "id": 2,
+    "title": "Inter-college Football Trials",
+    "category": "Sports",
+    "date": "2026-09-27",
+    "location": "Main Ground",
+    "description": "Open trials for students who want to represent StudentHub at the inter-college tournament."
+  },
+  {
+    "id": 3,
+    "title": "Career Planning Workshop",
+    "category": "Career",
+    "date": "2026-10-02",
+    "location": "Seminar Room 2",
+    "description": "Build a practical plan for internships, portfolios, and your first graduate role."
+  },
+  {
+    "id": 4,
+    "title": "Open Mic Evening",
+    "category": "Culture",
+    "date": "2026-10-05",
+    "location": "Student Commons",
+    "description": "An informal evening for music, poetry, comedy, and student performances."
+  },
+  {
+    "id": 5,
+    "title": "Library Research Clinic",
+    "category": "Academic",
+    "date": "2026-10-08",
+    "location": "Central Library",
+    "description": "Learn how to find reliable sources and organise research for your next assignment."
+  },
+  {
+    "id": 6,
+    "title": "Wellbeing Check-in",
+    "category": "Wellbeing",
+    "date": "2026-10-12",
+    "location": "Wellbeing Centre",
+    "description": "Drop in for a confidential conversation about study pressure and student wellbeing."
+  },
+  {
+    "id": 7,
+    "title": "Student Leadership Forum",
+    "category": "Community",
+    "date": "2026-10-15",
+    "location": "Lecture Theatre A",
+    "description": "Meet student representatives and share ideas for improving campus life."
+  },
+  {
+    "id": 8,
+    "title": "Coding Hackathon",
+    "category": "Technology",
+    "date": "2026-10-18",
+    "location": "Digital Lab",
+    "description": "Work in teams to build a useful solution to a real student challenge."
+  },
+  {
+    "id": 9,
+    "title": "Photography Walk",
+    "category": "Culture",
+    "date": "2026-10-21",
+    "location": "East Courtyard",
+    "description": "Explore campus and practise visual storytelling with fellow photography enthusiasts."
+  },
+  {
+    "id": 10,
+    "title": "Entrepreneurship Pitch Day",
+    "category": "Career",
+    "date": "2026-10-24",
+    "location": "Business Centre",
+    "description": "Present your business idea to mentors and receive practical feedback."
+  },
+  {
+    "id": 11,
+    "title": "Basketball League Finals",
+    "category": "Sports",
+    "date": "2026-10-28",
+    "location": "Indoor Arena",
+    "description": "Support the finalist teams in the annual StudentHub basketball league."
+  },
+  {
+    "id": 12,
+    "title": "Language Exchange Meet",
+    "category": "Community",
+    "date": "2026-11-01",
+    "location": "Student Commons",
+    "description": "Meet students from different backgrounds and practise a new language together."
+  },
+  {
+    "id": 13,
+    "title": "Public Speaking Masterclass",
+    "category": "Academic",
+    "date": "2026-11-04",
+    "location": "Seminar Room 1",
+    "description": "Build confidence, structure stronger presentations, and speak with clarity."
+  },
+  {
+    "id": 14,
+    "title": "Mental Wellness Session",
+    "category": "Wellbeing",
+    "date": "2026-11-07",
+    "location": "Wellbeing Centre",
+    "description": "Learn simple strategies for managing stress, focus, and healthy study habits."
+  },
+  {
+    "id": 15,
+    "title": "Alumni Networking Evening",
+    "category": "Career",
+    "date": "2026-11-10",
+    "location": "Conference Hall",
+    "description": "Connect with alumni and hear how they moved from campus into their careers."
+  }
+]
