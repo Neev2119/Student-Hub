@@ -80,7 +80,7 @@ After login:
   │   └── Student dashboard
   Student account
   └── Student dashboard
-  
+
 Student workspace
   ├── Attendance
   ├── Assignments

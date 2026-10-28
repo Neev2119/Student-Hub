@@ -52,7 +52,7 @@ if ($fullName === '') {
                 <h2>Welcome, <?= htmlspecialchars($fullName, ENT_QUOTES, 'UTF-8') ?>!</h2>
                 <p>Here is a quick look at your study progress for Semester 5.</p>
             </div>
-           
+
         </section>
 
         <section class="dashboard-metrics" aria-label="Study progress summary">
