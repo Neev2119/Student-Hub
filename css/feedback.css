@@ -1,0 +1,17 @@
+.feedback-form label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea,
+.feedback-form button {
+    width: 100%;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+    margin-bottom: 0.8rem;
+}

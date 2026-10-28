@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../php/require-student-mode.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignments - StudentHub</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/assignments.css">
 </head>
 <body>
     <header class="hero">
@@ -21,12 +23,13 @@
     </header>
 
     <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="courses.htm">Courses</a>
-        <a href="faq.html">FAQ</a>
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="attendance.php">Attendance</a>
+        <a href="assignments.php">Assignments</a>
+        <a href="courses.php">Courses</a>
+        <a href="faq.php">FAQ</a>
     </nav>
 
     <main class="container assignments-page">
@@ -54,7 +57,7 @@
                     <span class="eyebrow">Your workload</span>
                     <h2>What needs your attention</h2>
                 </div>
-                <a href="timetable.html">Plan study time &rarr;</a>
+                <a href="timetable.php">Plan study time &rarr;</a>
             </div>
             <div class="assignment-cards">
                 <article class="assignment-card assignment-card-priority">
@@ -62,21 +65,21 @@
                     <h3>Portfolio Website</h3>
                     <p>Build a responsive personal portfolio using the web development concepts from this term.</p>
                     <div class="assignment-meta"><span>Due 10 August</span><strong>Needs attention</strong></div>
-                    <a href="courses.htm">View course details &rarr;</a>
+                    <a href="courses.php">View course details &rarr;</a>
                 </article>
                 <article class="assignment-card">
                     <div class="assignment-card-top"><span class="assignment-code">DB-204</span><span class="table-status submitted">Submitted</span></div>
                     <h3>SQL Project</h3>
                     <p>Design a small relational database and demonstrate queries, relationships, and data validation.</p>
                     <div class="assignment-meta"><span>Due 15 August</span><strong>Submitted</strong></div>
-                    <a href="courses.htm">View course details &rarr;</a>
+                    <a href="courses.php">View course details &rarr;</a>
                 </article>
                 <article class="assignment-card">
                     <div class="assignment-card-top"><span class="assignment-code">JA-203</span><span class="table-status pending">Pending</span></div>
                     <h3>Mini Project</h3>
                     <p>Apply object-oriented programming fundamentals to create a small Java application.</p>
                     <div class="assignment-meta"><span>Due 20 August</span><strong>Plan your work</strong></div>
-                    <a href="courses.htm">View course details &rarr;</a>
+                    <a href="courses.php">View course details &rarr;</a>
                 </article>
             </div>
         </section>
@@ -87,7 +90,7 @@
                     <span class="eyebrow">Quick reference</span>
                     <h2>All assignments</h2>
                 </div>
-                <a href="contact.html">Ask for support &rarr;</a>
+                <a href="contact.php">Ask for support &rarr;</a>
             </div>
             <div class="table-wrap">
                 <table>
@@ -104,16 +107,16 @@
         <section class="assignment-tip">
             <strong>Make a simple plan.</strong>
             <span>Start with the earliest deadline, then reserve a small review session before each submission.</span>
-            <a href="timetable.html">Open timetable &rarr;</a>
+            <a href="timetable.php">Open timetable &rarr;</a>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
-            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
-            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
-            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.php">Dashboard</a><a href="courses.php">Courses</a><a href="timetable.php">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.php">Attendance</a><a href="assignments.php">Assignments</a><a href="faq.php">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.php">Contact support &rarr;</a></div>
         </div>
         <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
     </footer>

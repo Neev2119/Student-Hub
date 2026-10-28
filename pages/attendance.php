@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../php/require-student-mode.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance - StudentHub</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/attendance.css">
 </head>
 <body>
     <header class="hero">
@@ -21,12 +23,13 @@
     </header>
 
     <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="courses.htm">Courses</a>
-        <a href="faq.html">FAQ</a>
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="attendance.php">Attendance</a>
+        <a href="assignments.php">Assignments</a>
+        <a href="courses.php">Courses</a>
+        <a href="faq.php">FAQ</a>
     </nav>
 
     <main class="container attendance-page">
@@ -61,19 +64,19 @@
                     <div class="attendance-card-top"><span>Web Development</span><strong>87%</strong></div>
                     <div class="progress-track"><span style="width: 87%"></span></div>
                     <p>35 present out of 40 classes</p>
-                    <a href="courses.htm">View course &rarr;</a>
+                    <a href="courses.php">View course &rarr;</a>
                 </article>
                 <article class="attendance-card">
                     <div class="attendance-card-top"><span>Database Management</span><strong>84%</strong></div>
                     <div class="progress-track"><span style="width: 84%"></span></div>
                     <p>38 present out of 45 classes</p>
-                    <a href="courses.htm">View course &rarr;</a>
+                    <a href="courses.php">View course &rarr;</a>
                 </article>
                 <article class="attendance-card">
                     <div class="attendance-card-top"><span>Java Programming</span><strong>85%</strong></div>
                     <div class="progress-track"><span style="width: 85%"></span></div>
                     <p>42 present out of 50 classes</p>
-                    <a href="courses.htm">View course &rarr;</a>
+                    <a href="courses.php">View course &rarr;</a>
                 </article>
             </div>
         </section>
@@ -84,7 +87,7 @@
                     <span class="eyebrow">Detailed record</span>
                     <h2>Class attendance</h2>
                 </div>
-                <a href="contact.html">Report a correction &rarr;</a>
+                <a href="contact.php">Report a correction &rarr;</a>
             </div>
             <div class="table-wrap">
                 <table>
@@ -101,16 +104,16 @@
         <section class="attendance-tip">
             <strong>Small habit, big difference.</strong>
             <span>Check your timetable each morning and arrive a few minutes early for your first class.</span>
-            <a href="timetable.html">Open timetable &rarr;</a>
+            <a href="timetable.php">Open timetable &rarr;</a>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
-            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
-            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
-            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.php">Dashboard</a><a href="courses.php">Courses</a><a href="timetable.php">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.php">Attendance</a><a href="assignments.php">Assignments</a><a href="faq.php">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.php">Contact support &rarr;</a></div>
         </div>
         <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
     </footer>

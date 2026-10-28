@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(about|assignments|attendance|contact|courses|dashboard|faq|feedback|index|resources|timetable)\.html?$ $1.php [L]

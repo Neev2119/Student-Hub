@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../php/require-student-mode.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses - StudentHub</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/courses.css">
 </head>
 <body>
     <header class="hero">
@@ -21,13 +23,13 @@
     </header>
 
     <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="courses.htm">Courses</a>
-        <a href="faq.html">FAQ</a>
-        <a href="feedback.html">Feedback</a>
+        <a href="index.php">Home</a>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="attendance.php">Attendance</a>
+        <a href="assignments.php">Assignments</a>
+        <a href="courses.php">Courses</a>
+        <a href="faq.php">FAQ</a>
+        <a href="feedback.php">Feedback</a>
     </nav>
 
     <main class="container courses-page">
@@ -55,7 +57,7 @@
                     <span class="eyebrow">Your learning plan</span>
                     <h2>Current courses</h2>
                 </div>
-                <a href="timetable.html">View weekly timetable &rarr;</a>
+                <a href="timetable.php">View weekly timetable &rarr;</a>
             </div>
             <div class="course-cards">
                 <article class="course-card">
@@ -64,7 +66,7 @@
                     <p>Frontend and backend web design concepts, from responsive layouts to practical web projects.</p>
                     <div class="course-detail"><span>Attendance</span><strong>87%</strong></div>
                     <div class="course-progress"><span style="width: 87%"></span></div>
-                    <div class="course-footer"><span>Next class: Monday, 9:00 AM</span><a href="assignments.html">Assignments &rarr;</a></div>
+                    <div class="course-footer"><span>Next class: Monday, 9:00 AM</span><a href="assignments.php">Assignments &rarr;</a></div>
                 </article>
                 <article class="course-card">
                     <div class="course-card-top"><span class="course-code">DB-204</span><span class="course-status">In progress</span></div>
@@ -72,7 +74,7 @@
                     <p>Learn SQL, data modelling, and storage systems through structured database projects.</p>
                     <div class="course-detail"><span>Attendance</span><strong>84%</strong></div>
                     <div class="course-progress"><span style="width: 84%"></span></div>
-                    <div class="course-footer"><span>Next class: Tuesday, 11:00 AM</span><a href="assignments.html">Assignments &rarr;</a></div>
+                    <div class="course-footer"><span>Next class: Tuesday, 11:00 AM</span><a href="assignments.php">Assignments &rarr;</a></div>
                 </article>
                 <article class="course-card">
                     <div class="course-card-top"><span class="course-code">JA-203</span><span class="course-status">In progress</span></div>
@@ -80,7 +82,7 @@
                     <p>Strengthen your object-oriented programming fundamentals through hands-on practice.</p>
                     <div class="course-detail"><span>Attendance</span><strong>85%</strong></div>
                     <div class="course-progress"><span style="width: 85%"></span></div>
-                    <div class="course-footer"><span>Next class: Wednesday, 2:00 PM</span><a href="assignments.html">Assignments &rarr;</a></div>
+                    <div class="course-footer"><span>Next class: Wednesday, 2:00 PM</span><a href="assignments.php">Assignments &rarr;</a></div>
                 </article>
             </div>
         </section>
@@ -91,7 +93,7 @@
                     <span class="eyebrow">Quick reference</span>
                     <h2>Course overview</h2>
                 </div>
-                <a href="contact.html">Ask about a course &rarr;</a>
+                <a href="contact.php">Ask about a course &rarr;</a>
             </div>
             <div class="table-wrap">
                 <table>
@@ -109,9 +111,9 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
-            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
-            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
-            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.php">Dashboard</a><a href="courses.php">Courses</a><a href="timetable.php">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.php">Attendance</a><a href="assignments.php">Assignments</a><a href="faq.php">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.php">Contact support &rarr;</a></div>
         </div>
         <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
     </footer>

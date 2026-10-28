@@ -1,0 +1,31 @@
+.auth-body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #eef4ff, #f8fbff);
+}
+
+.auth-card {
+    width: min(100%, 430px);
+    padding: 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+.auth-card h1 {
+    margin: 0 0 0.4rem;
+    color: var(--primary);
+}
+
+.auth-card p {
+    color: var(--muted);
+}
+
+.auth-links {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}

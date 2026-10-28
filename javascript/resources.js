@@ -1,20 +1,37 @@
 const resourceList = document.querySelector("#resourceList");
 
 if (resourceList) {
+    const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+    })[character]);
+
     const resourceConfigs = {
         events: {
             label: "events",
-            endpoint: "../data/events.json",
+            endpoint: "../php/events.php",
             title: (item) => item.title,
             category: (item) => item.category,
             searchable: (item) => [item.title, item.category, item.location, item.description],
             sortDate: (item) => item.date,
             render: (item) => `
                 <article class="resource-card">
-                    <div class="resource-card-top"><span class="resource-tag">${item.category}</span><time datetime="${item.date}">${formatDate(item.date)}</time></div>
-                    <h3>${item.title}</h3>
-                    <p>${item.description}</p>
-                    <span class="resource-meta">${item.location}</span>
+                    ${item.image ? `<img class="event-poster" src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)} poster">` : ""}
+                    <div class="resource-card-top"><span class="resource-tag">${escapeHTML(item.category)}</span><time datetime="${escapeHTML(item.date)}">${formatDate(item.date)}</time></div>
+                    <h3>${escapeHTML(item.title)}</h3>
+                    <p>${escapeHTML(item.description)}</p>
+                    <span class="resource-meta">${escapeHTML(item.location)} &middot; ${escapeHTML(item.time)}</span>
+                    ${isEventPast(item.date) ? '<p class="event-registration-closed">Registration is closed for this event.</p>' : `<form class="event-registration-form">
+                        <label>Mobile number
+                            <input name="mobile_no" type="tel" inputmode="numeric" autocomplete="tel-national" pattern="[0-9]{10}" maxlength="10" required>
+                        </label>
+                        <input name="event_id" type="hidden" value="${escapeHTML(item.id)}">
+                        <button type="submit">Register for event</button>
+                        <p class="event-registration-message" role="status" aria-live="polite"></p>
+                    </form>`}
                 </article>`
         },
         students: {
@@ -71,12 +88,18 @@ if (resourceList) {
         year: "numeric"
     }).format(new Date(`${date}T00:00:00`));
 
+    const isEventPast = (date) => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return new Date(`${date}T00:00:00`) < today;
+    };
+
     const getInitials = (name) => name.split(" ").map((part) => part[0]).join("").slice(0, 2);
     const getPriorityClass = (priority) => priority.toLowerCase().replaceAll(" ", "-");
 
     const updateCategories = () => {
         const categories = [...new Set(state.items.map((item) => resourceConfigs[state.resource].category(item)))].sort();
-        filterSelect.innerHTML = `<option value="all">All categories</option>${categories.map((category) => `<option value="${category}">${category}</option>`).join("")}`;
+        filterSelect.innerHTML = `<option value="all">All categories</option>${categories.map((category) => `<option value="${escapeHTML(category)}">${escapeHTML(category)}</option>`).join("")}`;
         filterSelect.value = categories.includes(state.category) ? state.category : "all";
         state.category = filterSelect.value;
     };
@@ -98,7 +121,12 @@ if (resourceList) {
             return matchesSearch && matchesCategory;
         });
 
-        if (state.sort !== "default") {
+        if (state.resource === "events" && state.sort === "default") {
+            state.filteredItems.sort((first, second) => {
+                const upcomingDifference = Number(isEventPast(first.date)) - Number(isEventPast(second.date));
+                return upcomingDifference || first.date.localeCompare(second.date);
+            });
+        } else if (state.sort !== "default") {
             const [property, direction] = state.sort.split("-");
             state.filteredItems.sort((first, second) => {
                 const firstValue = property === "date" ? config.sortDate?.(first) || "" : config.title(first).toLowerCase();
@@ -196,6 +224,46 @@ if (resourceList) {
         state.sort = sortSelect.value;
         state.page = 1;
         applyFilters();
+    });
+
+    resourceList.addEventListener("submit", async (event) => {
+        const form = event.target.closest(".event-registration-form");
+        if (!form) {
+            return;
+        }
+
+        event.preventDefault();
+        const button = form.querySelector('button[type="submit"]');
+        const message = form.querySelector(".event-registration-message");
+        let registrationSucceeded = false;
+        button.disabled = true;
+        message.textContent = "Submitting your registration...";
+
+        try {
+            const response = await fetch("../php/register-for-event.php", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "X-CSRF-Token": resourceList.dataset.csrfToken
+                },
+                body: new URLSearchParams(new FormData(form))
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.message || "Your registration could not be submitted.");
+            }
+            message.textContent = result.message;
+            form.reset();
+            registrationSucceeded = true;
+            button.disabled = true;
+        } catch (error) {
+            message.textContent = error.message || "Unable to submit your registration. Please try again.";
+            console.error("StudentHub event registration failed:", error);
+        } finally {
+            if (!registrationSucceeded) {
+                button.disabled = false;
+            }
+        }
     });
 
     loadResource(state.resource);

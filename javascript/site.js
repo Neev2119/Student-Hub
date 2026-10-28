@@ -16,43 +16,69 @@ const setupNavigation = () => {
         return;
     }
 
+    if (window.location.pathname.endsWith("/dashboard.php")) {
+        window.addEventListener("pageshow", (event) => {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    }
+
     if (hero) {
         hero.classList.add("has-nav");
         hero.append(nav);
     }
 
-    const navigationLinks = [
-        ["index.html", "Home"],
-        ["dashboard.html", "Dashboard"],
-        ["attendance.html", "Attendance"],
-        ["assignments.html", "Assignments"],
-        ["courses.htm", "Courses"],
-        ["timetable.html", "Timetable"],
-        ["faq.html", "FAQ"],
-        ["resources.html", "Resources"],
-        ["contact.html", "Contact"],
-        ["feedback.html", "Feedback"]
+    const studentNavigationLinks = [
+        ["index.php", "Home"],
+        ["dashboard.php", "Dashboard"],
+        ["attendance.php", "Attendance"],
+        ["assignments.php", "Assignments"],
+        ["courses.php", "Courses"],
+        ["timetable.php", "Timetable"],
+        ["faq.php", "FAQ"],
+        ["resources.php", "Resources"],
+        ["contact.php", "Contact"],
+        ["feedback.php", "Feedback"]
     ];
+    let navigationLinks = [...studentNavigationLinks];
 
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    nav.innerHTML = navigationLinks
-        .map(([href, label]) => {
-            const activeState = href === currentPage ? ' aria-current="page"' : "";
-            return `<a href="${href}"${activeState}>${label}</a>`;
-        })
-        .join("");
+    const currentPage = window.location.pathname.split("/").pop() || "index.php";
+    nav.hidden = true;
+    const renderNavigation = () => {
+        nav.innerHTML = navigationLinks
+            .map(([href, label]) => {
+                const activeState = href === currentPage ? ' aria-current="page"' : "";
+                return `<a href="${href}"${activeState}>${label}</a>`;
+            })
+            .join("");
+    };
+    renderNavigation();
 
     const menuToggle = createButton("menu-toggle", "Toggle navigation menu", "☰");
     const siteTools = document.createElement("div");
     const themeToggle = createButton("theme-toggle", "Switch to dark theme", "☾");
     const heroInner = document.querySelector(".hero-inner");
+    const existingAuthLinks = heroInner?.querySelector(".site-auth-links");
     const loginLink = heroInner?.querySelector(".btn");
+    const authLinks = document.createElement("div");
 
     siteTools.className = "site-tools";
-    siteTools.append(themeToggle);
+    authLinks.className = "site-auth-links";
 
-    if (loginLink) {
-        siteTools.append(loginLink);
+    if (existingAuthLinks?.dataset.authRendered === "true") {
+        siteTools.append(existingAuthLinks);
+    } else if (loginLink) {
+        const registerLink = document.createElement("a");
+        registerLink.className = "btn";
+        registerLink.href = "register.html";
+        registerLink.textContent = "Register";
+        authLinks.append(loginLink, registerLink);
+    }
+
+    siteTools.append(themeToggle);
+    if (existingAuthLinks?.dataset.authRendered !== "true" && loginLink) {
+        siteTools.append(authLinks);
     }
 
     nav.prepend(menuToggle);
@@ -64,6 +90,60 @@ const setupNavigation = () => {
         menuToggle.setAttribute("aria-expanded", "false");
         menuToggle.textContent = "☰";
     };
+
+    fetch("../php/auth-session.php", {
+        headers: { Accept: "application/json", "Cache-Control": "no-cache" },
+        cache: "no-store",
+        credentials: "same-origin"
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Session check failed with status ${response.status}.`);
+            }
+            return response.json();
+        })
+        .then((session) => {
+            if (session.student?.role === "admin") {
+                navigationLinks = session.student.mode === "admin"
+                    ? [
+                        ["admin.php", "Admin dashboard"],
+                        ["admin-students.php", "Manage students"],
+                        ["admin-events.php", "Manage events"],
+                        ["admin-audit-logs.php", "Audit log"],
+                        ["select-mode.php", "Change workspace"]
+                    ]
+                    : [
+                        ...studentNavigationLinks,
+                        ["select-mode.php", "Change workspace"]
+                    ];
+                renderNavigation();
+                nav.prepend(menuToggle);
+                nav.querySelectorAll("a").forEach((link) => {
+                    link.addEventListener("click", closeMenu);
+                });
+            }
+            nav.hidden = false;
+
+            if (!session.authenticated || existingAuthLinks?.dataset.authRendered === "true") {
+                return;
+            }
+
+            const logoutForm = document.createElement("form");
+            const logoutButton = document.createElement("button");
+
+            logoutForm.className = "logout-form";
+            logoutForm.action = "../php/logout.php";
+            logoutForm.method = "post";
+            logoutButton.className = "btn";
+            logoutButton.type = "submit";
+            logoutButton.textContent = "Logout";
+            logoutForm.append(logoutButton);
+            authLinks.replaceChildren(logoutForm);
+        })
+        .catch((error) => {
+            nav.hidden = false;
+            console.error("Could not check the student session.", error);
+        });
 
     menuToggle.addEventListener("click", () => {
         const isOpen = nav.classList.toggle("is-open");
@@ -120,7 +200,7 @@ const setupNotification = () => {
                 <button class="modal-close" type="button" aria-label="Close update">×</button>
             </div>
             <p>Three assignments are waiting this week. Review your deadlines and check tomorrow's timetable before you start studying.</p>
-            <a class="btn primary" href="assignments.html">Open assignments</a>
+            <a class="btn primary" href="assignments.php">Open assignments</a>
         </section>
     `;
 

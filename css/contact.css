@@ -1,0 +1,26 @@
+.contact-list {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.contact-list > div {
+    margin-bottom: 0.7rem;
+}
+
+.contact-list div {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+}
+
+.status-pill {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+}

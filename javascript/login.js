@@ -4,20 +4,28 @@ if (loginForm) {
     const emailField = document.querySelector("#email");
     const passwordField = document.querySelector("#password");
 
-    const validateEmail = () => {
-        if (!emailField) {
-            return;
-        }
 
-        emailField.value = emailField.value.trim();
-        emailField.setCustomValidity(
-            emailField.validity.valid ? "" : "Enter a valid email address."
-        );
-    };
+const validateEmail = () => {
+    if (!emailField) return;
+
+    emailField.value = emailField.value.trim();
+    emailField.setCustomValidity("");
+
+    if (!emailField.value) {
+        emailField.setCustomValidity("Email is required.");
+    } else if (!emailField.validity.valid) {
+        emailField.setCustomValidity("Enter a valid email address.");
+    }
+};
+
 
     if (emailField) {
         emailField.addEventListener("input", validateEmail);
     }
+
+    passwordField?.addEventListener("input", () => {
+        passwordField.setCustomValidity("");
+    });
 
     loginForm.addEventListener("submit", (event) => {
         validateEmail();

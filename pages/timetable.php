@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../php/require-student-mode.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +22,14 @@
     </header>
 
     <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="courses.htm">Courses</a>
-        <a href="faq.html">FAQ</a>
-        <a href="feedback.html">Feedback</a>
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="attendance.php">Attendance</a>
+        <a href="assignments.php">Assignments</a>
+        <a href="courses.php">Courses</a>
+        <a href="faq.php">FAQ</a>
+        <a href="feedback.php">Feedback</a>
     </nav>
 
     <main class="container">
@@ -48,9 +50,9 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
-            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
-            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
-            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.php">Dashboard</a><a href="courses.php">Courses</a><a href="timetable.php">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.php">Attendance</a><a href="assignments.php">Assignments</a><a href="faq.php">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.php">Contact support &rarr;</a></div>
         </div>
         <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
     </footer>

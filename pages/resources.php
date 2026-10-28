@@ -1,3 +1,9 @@
+<?php require_once __DIR__ . '/../php/require-student-mode.php'; ?>
+<?php
+if (!isset($_SESSION['event_registration_csrf'])) {
+    $_SESSION['event_registration_csrf'] = bin2hex(random_bytes(32));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Resources - StudentHub</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/resources.css">
 </head>
 <body>
     <header class="hero">
@@ -20,7 +27,15 @@
         </div>
     </header>
 
-    <nav class="top-nav"></nav>
+    <nav class="top-nav">
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="attendance.php">Attendance</a>
+        <a href="assignments.php">Assignments</a>
+        <a href="courses.php">Courses</a>
+        <a href="faq.php">FAQ</a>
+    </nav>
 
     <main class="container resources-page">
         <section class="resources-hero">
@@ -70,7 +85,7 @@
                 </label>
             </div>
 
-            <div id="resourceList" class="resource-list" aria-live="polite" aria-busy="true"></div>
+            <div id="resourceList" class="resource-list" data-csrf-token="<?= htmlspecialchars($_SESSION['event_registration_csrf'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>" aria-live="polite" aria-busy="true"></div>
             <div id="resourceEmpty" class="resource-empty" hidden>No resources match your search.</div>
             <nav id="resourcePagination" class="resource-pagination" aria-label="Resource pages"></nav>
         </section>
@@ -79,13 +94,13 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
-            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
-            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
-            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.php">Dashboard</a><a href="courses.php">Courses</a><a href="timetable.php">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.php">Attendance</a><a href="assignments.php">Assignments</a><a href="faq.php">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.php">Contact support &rarr;</a></div>
         </div>
         <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
     </footer>
     <script src="../javascript/site.js" defer></script>
-    <script src="../javascript/resources.js" defer></script>
+    <script src="../javascript/resources.js?v=event-management-20261025" defer></script>
 </body>
 </html>

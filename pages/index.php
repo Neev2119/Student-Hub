@@ -1,3 +1,8 @@
+<?php
+session_start();
+header('Cache-Control: no-store');
+$student = $_SESSION['student'] ?? null;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <header class="hero">
@@ -15,37 +21,50 @@
                     <h1>StudentHub</h1>
                 </div>
             </div>
-            <a class="btn" href="login.html">Login</a>
+            <div class="site-auth-links" data-auth-rendered="true">
+                <?php if (is_array($student)): ?>
+                    <form class="logout-form" action="../php/logout.php" method="post">
+                        <button class="btn" type="submit">Logout</button>
+                    </form>
+                <?php else: ?>
+                    <a class="btn" href="login.html">Login</a>
+                    <a class="btn" href="register.html">Register</a>
+                <?php endif; ?>
+            </div>
         </div>
     </header>
 
     <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="courses.htm">Courses</a>
-        <a href="contact.html">Contact</a>
-        <a href="feedback.html">Feedback</a>
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="attendance.php">Attendance</a>
+        <a href="assignments.php">Assignments</a>
+        <a href="courses.php">Courses</a>
+        <a href="contact.php">Contact</a>
+        <a href="feedback.php">Feedback</a>
     </nav>
 
     <main class="container home-page">
         <section class="home-hero">
             <div class="home-hero-copy">
+                <?php if (is_array($student) && !empty($student['fullName'])): ?>
+                    <p class="welcome-greeting">Welcome, <?= htmlspecialchars($student['fullName'], ENT_QUOTES, 'UTF-8') ?>!</p>
+                <?php endif; ?>
                 <span class="eyebrow">Your student space</span>
                 <h2>Everything you need for a smoother semester.</h2>
                 <p>Keep track of your classes, stay ahead of deadlines, and find campus support without jumping between different pages.</p>
             </div>
             <div class="actions">
-                <a class="btn primary" href="dashboard.html">Open Dashboard</a>
-                <a class="btn secondary" href="timetable.html">View Timetable</a>
+                <a class="btn primary" href="dashboard.php">Open Dashboard</a>
+                <a class="btn secondary" href="timetable.php">View Timetable</a>
             </div>
         </section>
 
         <section class="home-stats" aria-label="Student overview">
-            <div><strong>85%</strong><span>Current attendance</span><a href="attendance.html">View record &rarr;</a></div>
-            <div><strong>3</strong><span>Assignments this week</span><a href="assignments.html">Check deadlines &rarr;</a></div>
-            <div><strong>5</strong><span>Classes on your schedule</span><a href="timetable.html">Plan your week &rarr;</a></div>
+            <div><strong>85%</strong><span>Current attendance</span><a href="attendance.php">View record &rarr;</a></div>
+            <div><strong>3</strong><span>Assignments this week</span><a href="assignments.php">Check deadlines &rarr;</a></div>
+            <div><strong>5</strong><span>Classes on your schedule</span><a href="timetable.php">Plan your week &rarr;</a></div>
         </section>
 
         <section class="home-section">
@@ -57,19 +76,19 @@
                 </div>
             </div>
             <div class="home-actions-grid">
-                <a class="action-card" href="assignments.html">
+                <a class="action-card" href="assignments.php">
                     <span class="action-number">01</span>
                     <h3>Stay ahead of deadlines</h3>
                     <p>See what is pending, what is submitted, and what needs your attention next.</p>
                     <span class="action-link">Open assignments &rarr;</span>
                 </a>
-                <a class="action-card" href="courses.htm">
+                <a class="action-card" href="courses.php">
                     <span class="action-number">02</span>
                     <h3>Know your courses</h3>
                     <p>Review your current subjects and quickly find the right academic information.</p>
                     <span class="action-link">Explore courses &rarr;</span>
                 </a>
-                <a class="action-card" href="contact.html">
+                <a class="action-card" href="contact.php">
                     <span class="action-number">03</span>
                     <h3>Get help when you need it</h3>
                     <p>Reach the StudentHub team for account questions, portal issues, or feedback.</p>
@@ -84,7 +103,7 @@
                     <span class="eyebrow">Around campus</span>
                     <h2>Find your place to learn</h2>
                 </div>
-                <a href="contact.html">Ask Student Services &rarr;</a>
+                <a href="contact.php">Ask Student Services &rarr;</a>
             </div>
             <div class="campus-grid">
                 <article class="campus-card">
@@ -110,20 +129,20 @@
             </div>
             <div class="footer-column">
                 <h3>Explore</h3>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="courses.htm">Courses</a>
-                <a href="timetable.html">Timetable</a>
+                <a href="dashboard.php">Dashboard</a>
+                <a href="courses.php">Courses</a>
+                <a href="timetable.php">Timetable</a>
             </div>
             <div class="footer-column">
                 <h3>Student tools</h3>
-                <a href="attendance.html">Attendance</a>
-                <a href="assignments.html">Assignments</a>
-                <a href="faq.html">FAQ</a>
+                <a href="attendance.php">Attendance</a>
+                <a href="assignments.php">Assignments</a>
+                <a href="faq.php">FAQ</a>
             </div>
             <div class="footer-column">
                 <h3>Need help?</h3>
                 <p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p>
-                <a href="contact.html">Contact support &rarr;</a>
+                <a href="contact.php">Contact support &rarr;</a>
             </div>
         </div>
         <div class="footer-bottom">

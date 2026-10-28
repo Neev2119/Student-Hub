@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - StudentHub</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 <body class="auth-body">
-    <main class="auth-card">
-        <h1 style="text-align: center;">StudentHub</h1>
+    <div class="auth-card">
+        <h1 class="register-title">StudentHub</h1>
         <p>Create your student account</p>
-        <form id="registerForm" action="http://localhost/WDF/Student-Hub/php/process-form.php" method="post" novalidate>
+        <form id="registerForm" action="../php/process-form.php" method="post" novalidate>
             <input type="hidden" name="formType" value="registration">
 
-            <label for="studentId">Student ID</label>
-            <input id="studentId" name="studentId" type="text" placeholder="Enter your student ID" required pattern="[A-Za-z0-9-]{4,20}" title="Enter a valid student ID with letters, numbers, or hyphens">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="Choose a username" required pattern="[A-Za-z0-9_]{3,30}" title="Use 3 to 30 letters, numbers, or underscores">
 
             <label for="fullName">Full name</label>
             <input id="fullName" name="fullName" type="text" placeholder="Enter your full name" required pattern="[A-Za-z]+(?:(?: |'|-)[A-Za-z]+)+" title="Enter at least two names using letters, spaces, apostrophes, or hyphens">
@@ -25,11 +27,11 @@
             <label for="phone">Phone number</label>
             <input id="phone" name="phone" type="tel" inputmode="numeric" placeholder="Enter your 10-digit mobile number" required pattern="[0-9]{10}" title="Enter a 10-digit mobile number">
 
-            <fieldset>
-                <legend>Gender</legend>
+            <div class="gender-group">
+                <p>Gender</p>
                 <label><input type="radio" name="gender" value="female" required> Female</label>
                 <label><input type="radio" name="gender" value="male"> Male</label>
-            </fieldset>
+            </div>
 
             <label for="password">Password</label>
             <input id="password" name="password" type="password" placeholder="Create a password" required pattern="(?=.*[A-Za-z])(?=.*[0-9])(?=.*[@$!%*?&]).{8,}" title="Use at least 8 characters, including a letter, a number, and a special character">
@@ -46,10 +48,10 @@
             <p id="registerMessage" class="form-message" role="status" aria-live="polite"></p>
         </form>
         <div class="auth-links">
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="login.html">Login</a>
         </div>
-    </main>
+    </div>
     <script src="../javascript/register.js" defer></script>
 </body>
 </html>

@@ -1,4 +1,8 @@
 # Keep locally submitted personal data out of source control.
 /data/form-submissions.json
+/data/practical7-submissions.json
 /csv/registrations.csv
 /text/registrations.txt
+/php/accounts.json
+/uploads/event-posters/*
+!/uploads/event-posters/.htaccess

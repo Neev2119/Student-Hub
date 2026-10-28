@@ -1,7 +1,7 @@
 const registerForm = document.querySelector("#registerForm");
 
 if (registerForm) {
-    const studentId = document.querySelector("#studentId");
+    const username = document.querySelector("#username");
     const fullName = document.querySelector("#fullName");
     const email = document.querySelector("#email");
     const phone = document.querySelector("#phone");
@@ -11,7 +11,7 @@ if (registerForm) {
     const registerMessage = document.querySelector("#registerMessage");
 
     const patterns = {
-        studentId: /^[A-Za-z0-9-]{4,20}$/,
+        username: /^[A-Za-z0-9_]{3,30}$/,
         name: /^[A-Za-z]+(?:[ '-][A-Za-z]+)+$/,
         email: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
         phone: /^[0-9]{10}$/,
@@ -54,7 +54,7 @@ if (registerForm) {
     };
 
     const runValidation = () => {
-        validateField(studentId, patterns.studentId, "Enter a valid student ID.");
+        validateField(username, patterns.username, "Use 3 to 30 letters, numbers, or underscores.");
         validateField(fullName, patterns.name, "Enter your first and last name.");
         validateField(email, patterns.email, "Enter a valid email address.");
         validateField(phone, patterns.phone, "Enter a 10-digit mobile number.");
@@ -67,10 +67,10 @@ if (registerForm) {
         validateGender();
     };
 
-    [studentId, fullName, email, phone].forEach((field) => {
+    [username, fullName, email, phone].forEach((field) => {
         field?.addEventListener("input", () => {
-            if (field === studentId) {
-                validateField(studentId, patterns.studentId, "Enter a valid student ID.");
+            if (field === username) {
+                validateField(username, patterns.username, "Use 3 to 30 letters, numbers, or underscores.");
             }
             if (field === fullName) {
                 validateField(fullName, patterns.name, "Enter your first and last name.");

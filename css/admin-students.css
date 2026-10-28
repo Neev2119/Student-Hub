@@ -1,0 +1,288 @@
+.admin-students-page {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.admin-page-heading,
+.admin-records-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.admin-page-heading h2,
+.admin-student-card h3 {
+    margin: 0.25rem 0;
+}
+
+.admin-page-heading p,
+.admin-records-heading p {
+    margin: 0.25rem 0;
+    color: var(--muted);
+}
+
+.admin-student-card {
+    min-width: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--text);
+}
+
+.admin-registration-chart {
+    min-width: 0;
+}
+
+.admin-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.admin-chart-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.admin-chart-swatch {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 3px;
+}
+
+.admin-chart-swatch.student,
+.admin-chart-bar.student {
+    background: #2563eb;
+}
+
+.admin-chart-swatch.event,
+.admin-chart-bar.event {
+    background: #0f9f8f;
+}
+
+.admin-chart-plot {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.75rem;
+    min-width: 440px;
+    margin-top: 0.75rem;
+    padding: 0.75rem 0.25rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.admin-chart-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.admin-chart-month {
+    display: grid;
+    grid-template-rows: 170px auto;
+    gap: 0.5rem;
+    min-width: 0;
+    text-align: center;
+}
+
+.admin-chart-bars {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.4rem;
+    border-bottom: 1px dashed var(--border);
+}
+
+.admin-chart-bar-column {
+    position: relative;
+    width: min(28px, 40%);
+    height: 100%;
+}
+
+.admin-chart-value {
+    position: absolute;
+    bottom: calc(var(--bar-height) + 4px);
+    left: 50%;
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1;
+    transform: translateX(-50%);
+}
+
+.admin-chart-bar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: var(--bar-height);
+    min-height: 3px;
+    border-radius: 5px 5px 0 0;
+}
+
+.admin-chart-bar.empty {
+    height: 0;
+    min-height: 0;
+}
+
+.admin-chart-month-label {
+    color: var(--muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.admin-student-form,
+.admin-student-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 0.85rem;
+    margin-top: 1rem;
+}
+
+.admin-student-form label,
+.admin-student-filters label {
+    display: grid;
+    flex: 1 1 180px;
+    gap: 0.35rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.admin-student-form input,
+.admin-student-form select,
+.admin-student-filters input,
+.admin-student-filters select {
+    width: 100%;
+    min-height: 42px;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--text);
+    font: inherit;
+}
+
+.admin-student-filters {
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.admin-student-filters label:first-child {
+    flex-grow: 2;
+}
+
+.admin-form-actions,
+.admin-row-actions,
+.admin-pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-form-actions {
+    flex-basis: 100%;
+}
+
+.admin-back-link,
+.admin-edit-link,
+.admin-cancel-link,
+.admin-pagination a {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.admin-message {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+}
+
+.admin-message.success {
+    background: #ecfdf5;
+    color: #065f46;
+}
+
+.admin-message.error {
+    background: #fef2f2;
+    color: #991b1b;
+}
+
+.admin-student-table-wrap {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.admin-student-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-student-table th,
+.admin-student-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.admin-student-table th {
+    white-space: nowrap;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.admin-student-table td {
+    overflow-wrap: anywhere;
+}
+
+.admin-student-table pre {
+    max-width: 24rem;
+    max-height: 12rem;
+    overflow: auto;
+    margin: 0;
+    white-space: pre-wrap;
+    font: inherit;
+    font-size: 0.8rem;
+}
+
+.admin-row-actions {
+    flex-wrap: wrap;
+}
+
+.admin-row-actions form {
+    margin: 0;
+}
+
+.admin-delete-button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #b91c1c;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.admin-pagination {
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+@media (max-width: 700px) {
+    .admin-page-heading,
+    .admin-records-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-student-card {
+        padding: 1rem;
+    }
+}

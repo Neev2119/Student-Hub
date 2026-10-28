@@ -1,3 +1,12 @@
+<?php
+require_once __DIR__ . '/../php/require-student-mode.php';
+$student = $_SESSION['student'] ?? null;
+
+$fullName = trim($student['fullName'] ?? '');
+if ($fullName === '') {
+    $fullName = $student['username'] ?? 'Student';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - StudentHub</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
     <header class="hero">
@@ -16,46 +26,47 @@
                     <p>Your dashboard for study progress</p>
                 </div>
             </div>
-            <a class="btn" href="login.html">Login</a>
+            <div class="site-auth-links" data-auth-rendered="true">
+                <form class="logout-form" action="../php/logout.php" method="post">
+                    <button class="btn" type="submit">Logout</button>
+                </form>
+            </div>
         </div>
     </header>
 
     <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="courses.htm">Courses</a>
-        <a href="contact.html">Contact</a>
-        <a href="feedback.html">Feedback</a>
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="attendance.php">Attendance</a>
+        <a href="assignments.php">Assignments</a>
+        <a href="courses.php">Courses</a>
+        <a href="contact.php">Contact</a>
+        <a href="feedback.php">Feedback</a>
     </nav>
 
     <main class="container dashboard-page">
         <section class="dashboard-welcome">
             <div>
                 <span class="eyebrow">Student dashboard</span>
-                <h2>Good morning, John.</h2>
+                <h2>Welcome, <?= htmlspecialchars($fullName, ENT_QUOTES, 'UTF-8') ?>!</h2>
                 <p>Here is a quick look at your study progress for Semester 5.</p>
             </div>
-            <div class="student-profile">
-                <strong>John Doe</strong>
-                <span>Computer Science</span>
-                <span>Semester 5</span>
-            </div>
+           
         </section>
 
         <section class="dashboard-metrics" aria-label="Study progress summary">
-            <a class="metric-card" href="attendance.html">
+            <a class="metric-card" href="attendance.php">
                 <span class="metric-label">Attendance</span>
                 <strong>85%</strong>
                 <span class="metric-note">Good standing &rarr;</span>
             </a>
-            <a class="metric-card" href="assignments.html">
+            <a class="metric-card" href="assignments.php">
                 <span class="metric-label">Pending work</span>
                 <strong>3</strong>
                 <span class="metric-note">Due this week &rarr;</span>
             </a>
-            <a class="metric-card" href="courses.htm">
+            <a class="metric-card" href="courses.php">
                 <span class="metric-label">Enrolled courses</span>
                 <strong>3</strong>
                 <span class="metric-note">View course list &rarr;</span>
@@ -70,17 +81,17 @@
                         <h2>Keep moving forward</h2>
                     </div>
                 </div>
-                <a class="priority-item" href="assignments.html">
+                <a class="priority-item" href="assignments.php">
                     <span class="priority-icon">01</span>
                     <span><strong>Review pending assignments</strong><small>Three tasks need attention this week.</small></span>
                     <span class="priority-arrow">&rarr;</span>
                 </a>
-                <a class="priority-item" href="timetable.html">
+                <a class="priority-item" href="timetable.php">
                     <span class="priority-icon">02</span>
                     <span><strong>Check tomorrow's timetable</strong><small>Plan your classes before the day begins.</small></span>
                     <span class="priority-arrow">&rarr;</span>
                 </a>
-                <a class="priority-item" href="attendance.html">
+                <a class="priority-item" href="attendance.php">
                     <span class="priority-icon">03</span>
                     <span><strong>Track your attendance</strong><small>Keep your current 85% record on course.</small></span>
                     <span class="priority-arrow">&rarr;</span>
@@ -96,7 +107,7 @@
                     <tr><td>Assignments</td><td><span class="table-status pending">3 pending</span></td></tr>
                     <tr><td>Campus events</td><td><span class="table-status info">2 upcoming</span></td></tr>
                 </table>
-                <a class="text-link" href="faq.html">Need help using StudentHub? &rarr;</a>
+                <a class="text-link" href="faq.php">Need help using StudentHub? &rarr;</a>
             </div>
         </section>
     </main>
@@ -104,9 +115,9 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-brand"><div class="footer-logo">S</div><div><h2>StudentHub</h2><p>Your simple campus portal for staying organised, informed, and connected.</p></div></div>
-            <div class="footer-column"><h3>Explore</h3><a href="dashboard.html">Dashboard</a><a href="courses.htm">Courses</a><a href="timetable.html">Timetable</a></div>
-            <div class="footer-column"><h3>Student tools</h3><a href="attendance.html">Attendance</a><a href="assignments.html">Assignments</a><a href="faq.html">FAQ</a></div>
-            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.html">Contact support &rarr;</a></div>
+            <div class="footer-column"><h3>Explore</h3><a href="dashboard.php">Dashboard</a><a href="courses.php">Courses</a><a href="timetable.php">Timetable</a></div>
+            <div class="footer-column"><h3>Student tools</h3><a href="attendance.php">Attendance</a><a href="assignments.php">Assignments</a><a href="faq.php">FAQ</a></div>
+            <div class="footer-column"><h3>Need help?</h3><p>Student Services<br>Mon-Fri, 9:00 AM-5:00 PM</p><a href="contact.php">Contact support &rarr;</a></div>
         </div>
         <div class="footer-bottom"><span>&copy; 2026 StudentHub. All rights reserved.</span><span>Built for better student experiences.</span></div>
     </footer>

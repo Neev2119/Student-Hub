@@ -1,0 +1,221 @@
+.assignments-page {
+    margin-top: 1.4rem;
+}
+
+.assignments-welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #172554, #2563eb 58%, #38bdf8);
+    color: #fff;
+    box-shadow: 0 10px 28px rgba(37, 99, 235, 0.18);
+}
+
+.assignments-welcome .eyebrow {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+}
+
+.assignments-welcome h2 {
+    max-width: 650px;
+    margin: 0.6rem 0 0.35rem;
+    color: #fff;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.1;
+}
+
+.assignments-welcome p {
+    max-width: 650px;
+    margin: 0;
+    color: #dbeafe;
+}
+
+.assignment-count {
+    display: grid;
+    min-width: 190px;
+    gap: 0.1rem;
+    padding: 1rem 1.25rem;
+    border-left: 2px solid #7dd3fc;
+}
+
+.assignment-count strong {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.assignment-count span {
+    color: #dbeafe;
+    font-size: 0.9rem;
+}
+
+.assignment-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 2.2rem;
+}
+
+.assignment-summary div {
+    display: grid;
+    gap: 0.15rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+}
+
+.assignment-summary strong {
+    color: var(--primary);
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.assignment-summary span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.assignments-section {
+    margin-bottom: 2rem;
+}
+
+.assignment-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.assignment-card {
+    display: flex;
+    min-height: 290px;
+    flex-direction: column;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+.assignment-card-priority {
+    border-color: #93c5fd;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.1);
+}
+
+.assignment-card-top,
+.assignment-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 0.7rem;
+}
+
+.assignment-code {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.assignment-card h3 {
+    margin: 2rem 0 0.45rem;
+    color: var(--text);
+    font-size: 1.25rem;
+}
+
+.assignment-card p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.assignment-meta {
+    align-items: end;
+    margin-top: auto;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.assignment-meta strong {
+    color: var(--primary);
+    text-align: right;
+}
+
+.assignment-card > a,
+.assignment-table-card > .section-heading a,
+.assignment-tip a {
+    margin-top: 0.8rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+.table-status.submitted {
+    background: #eff6ff;
+    color: var(--primary);
+}
+
+.assignment-table-card .section-heading {
+    margin-bottom: 0.8rem;
+}
+
+.assignment-tip {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid #38bdf8;
+    border-radius: 10px;
+    background: #eff6ff;
+    color: #172554;
+}
+
+.assignment-tip span {
+    flex: 1;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .assignments-welcome {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .assignment-count {
+        width: 100%;
+    }
+
+    .assignment-summary,
+    .assignment-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .assignment-tip {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .assignments-page {
+        padding: 0 1rem;
+    }
+
+    .assignments-welcome h2 {
+        font-size: 2rem;
+    }
+
+    .assignment-meta {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .assignment-meta strong {
+        text-align: left;
+    }
+}
